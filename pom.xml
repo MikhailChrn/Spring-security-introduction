@@ -53,6 +53,6 @@
 
   </dependencies>
   <build>
-    <finalName>Spring-security</finalName>
+    <finalName>Spring-security-introduction</finalName>
   </build>
 </project>

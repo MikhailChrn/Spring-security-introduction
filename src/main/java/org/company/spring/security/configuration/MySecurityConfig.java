@@ -12,8 +12,17 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         UserBuilder userBuilder = User.withDefaultPasswordEncoder();
 
-        auth.inMemoryAuthentication().withUser(userBuilder.username("Ivan").password("Ivan").roles("EMPLOYEE"));
-        auth.inMemoryAuthentication().withUser(userBuilder.username("Elena").password("Elena").roles("HR"));
-        auth.inMemoryAuthentication().withUser(userBuilder.username("Mikhail").password("Mikhail").roles("MANAGER", "HR"));
+        auth.inMemoryAuthentication()
+                .withUser(userBuilder.username("Ivan")
+                        .password("Ivan")
+                        .roles("EMPLOYEE"))
+                .withUser(userBuilder
+                        .username("Elena")
+                        .password("Elena")
+                        .roles("HR"))
+                .withUser(userBuilder
+                        .username("Mikhail")
+                        .password("Mikhail")
+                        .roles("MANAGER", "HR"));
     }
 }
